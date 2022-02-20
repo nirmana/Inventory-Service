@@ -1,0 +1,21 @@
+
+    [
+        {
+            "name": "Ranga Dewasinghe",
+            "email": "rnirmana@gmail.com",
+            "password": "$2b$10$5w4M8yKu.wa6zv7DcZM7b.iuOmsCSB15M7pwhmyXBNApNbXOTtFo2",
+            "role": "Admin"
+        },
+        {
+            "name": "User 1",
+            "email": "user1@test.com",
+            "password": "ranga123",
+            "role": "User"
+        },
+        {
+            "name": "User 2",
+            "email": "user2@test.com",
+            "password": "ranga123",
+            "role": "User"
+        }
+    ]
