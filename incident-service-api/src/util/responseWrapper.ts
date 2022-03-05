@@ -1,6 +1,7 @@
+import { ValidationError } from "class-validator";
+
 import { AppCodes } from "../types/enum/appCodes";
 import { ApiResponseDto } from "../types/response/apiResponseDto";
-import { ValidationError } from "class-validator";
 
 export const generateFailedResponse = (
   msg: string | undefined,

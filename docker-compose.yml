@@ -53,7 +53,7 @@ services:
     depends_on:
       - incident-service-api
     build:
-      context: ./incident-service-web
+      context: ./incident-service-app
       args:
         - REACT_APP_API_BASE_URL=$CLIENT_API_BASE_URL
     restart: unless-stopped

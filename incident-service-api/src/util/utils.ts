@@ -16,3 +16,6 @@ export const addDaysToDate = (date: Date, days: number): Date => {
   return res;
 };
 
+export const getDate = (): Date => {
+  return new Date();
+};

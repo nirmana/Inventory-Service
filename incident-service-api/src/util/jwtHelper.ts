@@ -13,6 +13,7 @@ export const generateAccessToken = (user: IUser): string => {
   return jwt.sign(
     {
       email: user.email,
+      name: user.name,
       role: user.role,
       createdAt: new Date().getTime(),
     },
@@ -24,6 +25,7 @@ export const generateRefreshToken = async (user: IUser): Promise<string> => {
   const refreshToken = jwt.sign(
     {
       email: user.email,
+      name: user.name,
       createdAt: new Date().getTime(),
     },
     process.env.REFRESH_TOKEN_SECRET,

@@ -1,6 +1,6 @@
 FROM node:16 as build-stage
 
-WORKDIR /incident-service-web
+WORKDIR /incident-service-app
 COPY package.json .
 RUN npm install
 COPY . .
@@ -12,6 +12,6 @@ RUN npm run build
 # Stage 2
 FROM nginx:1.17.0-alpine
 
-COPY --from=build-stage incident-service-web/build /usr/share/nginx/html
+COPY --from=build-stage incident-service-app/build /usr/share/nginx/html
 EXPOSE $REACT_DOCKER_PORT
 CMD nginx -g 'daemon off;'

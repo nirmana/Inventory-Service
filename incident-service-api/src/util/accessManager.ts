@@ -21,8 +21,8 @@ const grants = {
       "read:own": ["*"],
     },
     Incident: {
-      "read:own": ["*"],
-      "update:own": ["*"],
+      "read:any": ["*"],
+      "update:any": ["*"],
     },
   },
 };
