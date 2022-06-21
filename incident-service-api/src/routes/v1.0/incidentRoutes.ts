@@ -19,7 +19,7 @@ import { SortKeys } from "../../types/enum/sortKey";
 import { CreateIncidentRequestDto } from "../../types/request/createIncidentRequestDto";
 import { AppCodes } from "../../types/enum/appCodes";
 import { getDate } from "../../util/utils";
-import { DeleteIncidentRequestDto } from "../../types/request/DeleteIncidentRequestDto";
+import { DeleteIncidentRequestDto } from "../../types/request/deleteIncidentRequestDto";
 import { UpdateIncidentRequestDto } from "../../types/request/updateIncidentRequestDto";
 import { UpdateIncidentStatusRequestDto } from "../../types/request/updateIncidentStatusRequestDto";
 

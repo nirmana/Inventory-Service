@@ -15,7 +15,7 @@ import incidentRouter from "./routes/v1.0/incidentRoutes";
 dotenv.config();
 
 const app = express();
-const PORT = process.env.NODE_DOCKER_PORT || 80;
+const PORT = process.env.NODE_DOCKER_PORT || 8080;
 const corsOptions = {
   origin: process.env.CLIENT_ORIGIN || "http://localhost:80",
 };
@@ -24,7 +24,7 @@ const corsOptions = {
  * MW configuration
  */
 app.use(helmet());
-app.use(cors(corsOptions));
+app.use(cors());
 app.use(bodyParser.json());
 app.use(
   bodyParser.urlencoded({
@@ -42,10 +42,10 @@ app.use("/api/v1.0/auth", authRouter);
 app.use("/api/v1.0/user", authenticateAccessToken, userRouter);
 app.use("/api/v1.0/incident", authenticateAccessToken, incidentRouter);
 
-connect({
-  db: `mongodb://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false`,
-});
 
+connect({
+  db: `mongodb://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_NAME}?authSource=admin&readPreference=primary&appname=MongoDB%20Compass&directConnection=true&ssl=false&replicaSet=rs`,
+});
 /**
  * Custom Error Handlers
  */

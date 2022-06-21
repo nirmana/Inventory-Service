@@ -80,6 +80,7 @@ authRouter.post("/refresh-token", async (request: any, response: any) => {
                 accessToken: jwtToken,
                 refreshToken: dbRefreshToken.refreshToken,
                 fullName: user.name,
+                role: user.role,
               })
             );
           } else {
